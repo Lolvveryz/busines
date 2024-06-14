@@ -9,7 +9,7 @@ load_all_data(users)
 bot = telebot.TeleBot(os.getenv('TOKEN'))
 
 
-@bot.business_message_handler(content_types=['photo', 'text'], func=lambda mess: mess.from_user.username!= "lolvveryz")
+@bot.business_message_handler(content_types=['photo', 'text'], func=lambda mess: mess.from_user.username!= "YOUR USERNAME")
 def business_message(mess: types.Message):
     if mess.content_type == "text":
         response = gpt4(mess.text, os.getenv('API'), mess.from_user.id)
